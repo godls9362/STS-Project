@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.human93.mapper.dotoriMapperDAO">
+	<resultMap type="com.human93.VO.MemberVO" id="resultList">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="interest" column="interest"/>
+		<result property="introduction" column="introduction"/>
+	</resultMap> 
+ 	<insert id="insertOne" parameterType="com.human93.VO.MemberVO">
+	insert into member values (#{id},#{pwd},#{name},#{email},#{interest},#{introduction}) 	
+ 	</insert>
+ 	<select id="check_id" parameterType="String" resultType="com.human93.VO.MemberVO">
+	select id from member where id=#{id}
+ 	</select>
+ 	<select id="selectOne" resultType="com.human93.VO.MemberVO" parameterType="String">
+ 	select * from member where id=#{id}
+ 	</select>
+ 	
+</mapper>

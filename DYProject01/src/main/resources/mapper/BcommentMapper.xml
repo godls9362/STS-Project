@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.human93.mapper.BcommentMapperDAO">
+<resultMap type="com.human93.VO.BCommentVO" id="comentList">
+	<result property="Bno" column="Bno"/>
+	<result property="Cno" column="Cno"/>
+	<result property="Cwriter" column="Cwriter"/>
+	<result property="Ccontent" column="Ccontent"/>
+	<result property="Cregtime" column="Cregtime"/>
+</resultMap>
+<insert id="CommentIn" parameterType="com.human93.VO.BCommentVO">
+	insert into Bcomment values(#{Bno},c_seq.nextval,#{Cwriter},#{Ccontent},default)
+</insert>
+<select id="selectBC" parameterType="String" resultMap="comentList">
+	select * from Bcomment where Bno=#{Bno} order by Cregtime desc
+</select>
+<delete id="deleteONEBC" parameterType="String">
+	delete from Bcomment where Cno=#{Cno}
+</delete>
+</mapper>

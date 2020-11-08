@@ -1,0 +1,23 @@
+*{
+	margin:0 auto;
+	
+	list-style:none;
+	font-family:"맑은 고딕";
+	
+}
+body{
+	padding-top: 30px;
+	width:1200px;
+	background-color:#000000
+	
+}
+td{
+    color: #ffffff;
+}
+.submit{
+	height: 80px;
+}
+
+.reset{
+	height: 80px;
+}

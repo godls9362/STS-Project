@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.human93.mapper.boardMapperDAO">
+	<select id="getgroupOrd" parameterType="String" resultType="com.human93.VO.BoardVO">
+		select groupOrd,groupLayer from board where no=#{no}
+	</select>
+	<insert id="saveRly" parameterType="com.human93.VO.BoardVO" >
+		insert into board values(#{no},#{title},#{writer},default,#{content},#{originNo},#{groupOrd},#{groupLayer})
+	</insert>
+	<update id="sameRlyUp" parameterType="String"> <!-- 원글과 같은 답글을 단 녀석들을 업!시켜줌 -->
+		update board set groupOrd=groupOrd+1 where groupOrd>0 and originNo=#{originNo}
+	</update>
+	<update id="anotherRlyUp" parameterType="int"> <!-- 답글에 답글  단 녀석들 뒤로 보내야함 업!시켜줌 -->
+		update board set groupOrd=groupOrd+1 where groupOrd>=#{groupOrd}
+	</update>
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.human93.mapper.boardMapperDAO">
+	<resultMap type="com.human93.VO.BoardVO" id="bresultlist">
+		<result property="no" column="no"/>
+		<result property="num" column="num"/> <!-- rownum자리로 DB에 저장된거 X -->
+		<result property="title" column="title"/>
+		<result property="writer" column="writer"/>
+		<result property="regtime" column="regtime"/>
+		<result property="content" column="content"/>
+		<result property="originNo" column="originNo"/>
+		<result property="groupOrd" column="groupOrd"/>
+		<result property="groupLayer" column="groupLayer"/>
+	</resultMap>
+	<select id="bselectAll" resultMap="bresultlist">
+		select * from bselect_view 
+	</select>
+	<insert id="binsert" parameterType="com.human93.VO.BoardVO">
+		insert into board values (#{no},#{title},#{writer},default,#{content},#{no},default,default)
+	</insert>
+	<select id="bgetSeq" resultType="String">
+		select board_seq.nextval as seq from dual
+	</select>
+	<select id="bselectOne" resultType="com.human93.VO.BoardVO" parameterType="String">
+		select b.*,m.name as nickname from board b inner join member m on m.id=b.writer where b.no=#{no}
+	</select>
+	<delete id="bdeleteOne" parameterType="com.human93.VO.BoardVO">
+		delete from board where no=#{no}
+	</delete>
+	<update id="bupdateOne" parameterType="com.human93.VO.BoardVO">
+		update board set title=#{title},content=#{content} where no=#{no}
+	</update>
+	<select id="countBno" resultType="int">
+		select count(*) from bbs
+	</select>
+</mapper>

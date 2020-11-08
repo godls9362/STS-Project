@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	font-family:"맑은 고딕";
+	color:#ffffff
+}
+body{
+	width:1200px;
+	background-color:#000000;
+	margin-top: 30px;
+	
+
+}
+
+a{
+	text-decoration:none;
+	display:block;
+}
+header{
+	height:100px; /*상단 높이*/
+	width:1000px; /*상단 너비*/
+}
+.top{             /*logo와 menu 묶어줌*/
+	height:100px; /*상단 로고와 메뉴가 들어가는 곳 높이*/
+	width:1000px; /*상단 로고와 메뉴가 들어가는 곳 너비*/
+}
+.logo{            /*로고 영역 스타일*/
+	float:left;
+	height:100px; /*로고 영역 높이*/
+	width:260px;  /*로고 영역 너비*/
+}
+.logo img{
+	float:left;
+	height:100px;
+	width:260px;
+	margin-top:0;
+	margin-left:0;
+}
+.menu{            /*메뉴 영역 스타일*/
+	float:right;
+	height:100x;  /*메뉴 영역 높이*/
+	width:740px;  /*메뉴 영역 너비*/
+	z-index:1;  
+}
+.navi{            /*전체 메뉴 스타일*/
+	float:right;
+	margin-top:30px;
+	margin-right:10px;
+}
+.navi>li{         /*각 메인 메뉴 스타일*/
+	float:left;
+}
+.navi>li>a{       /*각 메인 메뉴의 <a> 요소 스타일*/
+	height:40x;
+	width:180px;
+	line-height:40px; 
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	background-color:#333333;
+	color:#ffffff; 
+}
+.navi>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#ababab; 
+}
+.submenu{         /*서브 메뉴 영역 스타일*/
+	width:180px;
+	position:absolute;
+	display:none;
+	z-index:1;
+}
+.submenu>li>a{    /*각 서브 메뉴의 <a> 요소 스타일*/ 
+	height:35px;
+	line-height:35px;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	background-color:#ababab; 
+	color:#ffffff;
+}
+.submenu>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#5d5353;
+}
+
+section{
+	width: 1200px;
+	text-align: center;
+	height: 400px;
+	
+}
+#headline{
+	font-size: 30px;
+}
+#mytable{
+	margin-top: 20px;
+	width:800px;
+	text-align: center;
+	margin-left: 220px;
+
+}
+#Cno{
+	width: 80px;
+}
+#Cwriter{
+	width: 137.5px;
+}
+#Ctitle{
+	width: 337.5px;
+}
+#Cdate{
+	width: 245px;
+}
+#pagination{
+	width:1000px;
+	margin-top: 10px;
+	margin-left: 540px;
+	
+}
+.first{
+	color: black;
+	font-size:16px;
+	font-weight: bold;
+	width: 50px;
+	height: 30px;
+	
+	margin-top: 15px;
+	
+	margin-bottom:30px;
+}
+.second{
+	font-size:14px;
+	color: black;
+	width: 40px;
+	color: black;
+	font-size:16px;
+	font-weight: bold;
+	width: 50px;
+	height: 30px;
+	margin-right:20px;
+	margin-top: 15px;
+	margin-bottom:30px;
+}
+.firsttr{
+	background-color: #5d5353;
+	font-weight:bold;
+	height: 30px;
+}
+#secondtr{
+	
+		
+		height: 40px;
+	
+}
+footer{
+	height:400px; /*하단 높이*/
+	width:1000px; /*하단 너비*/
+	background-color:#000000;
+	margin-top:150px;
+	border-top: 1px solid #666;
+}
+
+.site{                /*btmenu와 copy 묶어줌*/
+	height:100px; /*하단 메뉴와 Copyright 들어가는 곳 높이*/
+	width:800px;  /*하단 메뉴와 Copyright 들어가는 곳 너비*/
+}
+.btmenu{
+	height:50px;  /*하단 메뉴 높이*/
+	width:500px;  /*하단 메뉴 너비*/
+	text-align:center;
+    font-size:13px;
+	line-height:30px;
+	margin-left: 80px;
+	
+}
+.btmenu2{
+	margin-left: 100px;
+	
+}
+.btmenu li{
+	
+    margin-top:10px;
+    display:inline-block;
+	width:100px;
+	
+}
+.btmenu li:hover{
+    font-weight:bold;
+}
+.copy{
+	height:50px;  /*Copyright 높이*/
+	width:800px;  /*Copyright 너비*/
+	text-align:center;
+	padding-top: 2px;
+    font-size:12px;
+	line-height:10px;
+	color: #ababab;
+margin-right:50px;	
+	
+}
+
+
+
+
+
+
